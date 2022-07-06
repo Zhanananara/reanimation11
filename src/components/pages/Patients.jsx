@@ -16,9 +16,9 @@ import { Button, IconButton, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 const Patients = () => {
-  // const API = "http://localhost:8002/products";
-  const API = "https://serverjan.herokuapp.com/products";
-  const { getProducts } = useProductContext();
+  const API = "http://localhost:8002/products";
+  // const API = "https://serverjan.herokuapp.com/products";
+  const { delProduct } = useProductContext();
   const [currentData, setCurrentData] = useState([]);
   const [thisWord, setThisWord] = useState("");
   const [type1, setType1] = useState("");
@@ -105,8 +105,8 @@ const Patients = () => {
         >
           <MenuItem value={"Кардиология"}>Кардиология</MenuItem>
           <MenuItem value={"Неврология"}>Неврология</MenuItem>
-          <MenuItem value={"surgery"}>Хирургия</MenuItem>
-          <MenuItem value={"therapy"}>Терапия</MenuItem>
+          <MenuItem value={"Хирургия"}>Хирургия</MenuItem>
+          <MenuItem value={"Терапия"}>Терапия</MenuItem>
           <MenuItem value={"Травмотология"}>Травмотология</MenuItem>
           <MenuItem value={"Урология"}>Урология</MenuItem>
           <MenuItem value={"Отделение ЛОР"}>Отделение ЛОР</MenuItem>
@@ -178,7 +178,7 @@ const Patients = () => {
                   fontSize: "1.5rem",
                 }}
               >
-                Дата рождения
+                Состояние
               </TableCell>
               <TableCell
                 sx={{
@@ -202,19 +202,22 @@ const Patients = () => {
                     zIndex: "1",
                   },
                 }}
-                onClick={() => {
-                  navigate(`/patients/${row.id}`);
-                }}
               >
                 <TableCell component="th" scope="row">
                   {row.number}
                 </TableCell>
-                <TableCell>{row.name}</TableCell>
+                <TableCell
+                  onClick={() => {
+                    navigate(`/patients/${row.id}`);
+                  }}
+                >
+                  {row.name}
+                </TableCell>
                 <TableCell>{row?.doctor}</TableCell>
                 <TableCell>{row.type}</TableCell>
-                <TableCell>{row.date}</TableCell>
+                <TableCell>{row.description}</TableCell>
                 <TableCell>
-                  <IconButton>
+                  <IconButton onClick={() => delProduct(row.id)}>
                     <RemoveCircleOutlineIcon />
                   </IconButton>
                 </TableCell>

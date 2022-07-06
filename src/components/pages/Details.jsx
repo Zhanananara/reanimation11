@@ -35,7 +35,6 @@ const Details = () => {
         <AddCardIcon />
       </IconButton>
       {/* </Button> */}
-
       <div
         style={{
           width: "100%",
@@ -175,6 +174,46 @@ const Details = () => {
               item
               xs={12}
               md={3}
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                margin: "0",
+              }}
+            >
+              <Typography variant="h6">Обьективный статус</Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={9}
+              sx={{ display: "flex", justifyContent: "flex-start" }}
+            >
+              <Typography variant="subtitle1">
+                {currentData.objStatus}
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={3}
+              sx={{ display: "flex", justifyContent: "flex-start" }}
+            >
+              <Typography variant="h6">Состояние</Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={9}
+              sx={{ display: "flex", justifyContent: "flex-start" }}
+            >
+              <Typography variant="subtitle1">
+                {currentData.description}
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={3}
               sx={{ display: "flex", justifyContent: "flex-start" }}
             >
               <Typography variant="h6">Лечащий врач</Typography>
@@ -192,9 +231,8 @@ const Details = () => {
         {show ? <AddObj oneProduct={oneProduct} sx={{ width: "50%" }} /> : null}
       </div>
       {/* ////////////////////////////////////////////////////////////////////////////////////////// */}
-
-      {currentData.temperatures &&
-        currentData.temperatures.map((item) => {
+      {currentData?.temperatures &&
+        currentData?.temperatures.map((item) => {
           return (
             <div
               style={{
@@ -290,6 +328,22 @@ const Details = () => {
                   sx={{ display: "flex", justifyContent: "flex-start" }}
                 >
                   <Typography variant="subtitle1">{item.AD}</Typography>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={3}
+                  sx={{ display: "flex", justifyContent: "flex-start" }}
+                >
+                  <Typography variant="h6">Жалобы</Typography>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={9}
+                  sx={{ display: "flex", justifyContent: "flex-start" }}
+                >
+                  <Typography variant="subtitle1">{item.complaints}</Typography>
                 </Grid>
               </Grid>
             </div>

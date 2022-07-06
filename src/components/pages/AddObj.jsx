@@ -114,10 +114,10 @@ const AddObj = ({ oneProduct }) => {
             }}
           />
           <TextField
-            id="obj"
-            name="objStatus"
-            value={inpValues.objStatus}
-            label="Обьективный статус"
+            id="complaints"
+            name="complaints"
+            value={inpValues.complaints}
+            label="Жалобы"
             onChange={(e) => handleChange(e)}
             sx={{ width: 220, marginTop: "20px" }}
             InputLabelProps={{
@@ -125,18 +125,6 @@ const AddObj = ({ oneProduct }) => {
             }}
           />
         </div>
-        <TextField
-          id="complains"
-          sx={{ margin: "10px 0" }}
-          name="complaints"
-          value={inpValues.complaints}
-          label="Жалобы"
-          fullWidth
-          onChange={(e) => handleChange(e)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
 
         <TextField
           id="datetime-local"
