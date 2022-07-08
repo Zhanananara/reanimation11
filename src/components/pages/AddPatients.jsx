@@ -93,8 +93,8 @@ const AddPatients = () => {
             >
               <MenuItem value={"Кардиология"}>Кардиология</MenuItem>
               <MenuItem value={"Неврология"}>Неврология</MenuItem>
-              <MenuItem value={"surgery"}>Хирургия</MenuItem>
-              <MenuItem value={"therapy"}>Терапия</MenuItem>
+              <MenuItem value={"Хирургия"}>Хирургия</MenuItem>
+              <MenuItem value={"Терапия"}>Терапия</MenuItem>
               <MenuItem value={"Травмотология"}>Травмотология</MenuItem>
               <MenuItem value={"Урология"}>Урология</MenuItem>
               <MenuItem value={"Отделение ЛОР"}>Отделение ЛОР</MenuItem>
